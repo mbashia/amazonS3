@@ -62,8 +62,7 @@ defmodule AmazonS3Web.PuppyLive.UploadComponent do
           </div>
         <% end %>
         <%= for entry <- @uploads.photo.entries do %>
-          <.live_img_preview entry={entry} width="75" />
-          <!-- <%= live_img_preview(entry, width = "75") %> -->
+          <%= live_img_preview(entry) %>
           <div class="py-5">
             <div class="flex items-center">
               <div class="w-0 flex-1">

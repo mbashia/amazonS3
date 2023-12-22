@@ -36,6 +36,7 @@ defmodule AmazonS3Web.PuppyLive.FormComponent do
     save_puppy(socket, socket.assigns.action, puppy_params)
   end
 
+  @impl true
   defp presign_upload(entry, %{assigns: %{uploads: uploads}} = socket) do
     # uploads = socket.assigns.uploads
     # bucket = "phx-upload-example"

@@ -72,8 +72,8 @@ defmodule AmazonS3Web.SimpleS3Upload do
   defp config do
     %{
       region: region(),
-      access_key_id: Application.fetch_env!(:liveview_mastery, :access_key_id),
-      secret_access_key: Application.fetch_env!(:liveview_mastery, :secret_access_key)
+      access_key_id: System.get_env("s3_buckets_access_key"),
+      secret_access_key: System.get_env("s3_buckets_secret_key")
     }
   end
 
@@ -97,11 +97,13 @@ defmodule AmazonS3Web.SimpleS3Upload do
   end
 
   def bucket do
-    Application.fetch_env!(:liveview_mastery, :bucket)
+    # Application.fetch_env!(:liveview_mastery, :bucket)
+    System.get_env("s3_bucket_name")
   end
 
   def region do
-    Application.fetch_env!(:liveview_mastery, :region)
+    # Application.fetch_env!(:liveview_mastery, :region)
+    System.get_env("s3_region")
   end
 
   def s3_filepath(entry) do
