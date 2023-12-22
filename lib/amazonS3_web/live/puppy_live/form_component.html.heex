@@ -7,32 +7,29 @@
     id="puppy-form"
     phx-target={@myself}
     phx-change="validate"
-    phx-submit="save">
-  
-    <%= label f, :name %>
-    <%= text_input f, :name %>
-    <%= error_tag f, :name %>
-  
-    <%= label f, :color %>
-    <%= text_input f, :color %>
-    <%= error_tag f, :color %>
-  
-    <%= label f, :breed %>
-    <%= text_input f, :breed %>
-    <%= error_tag f, :breed %>
-  
+    phx-submit="save"
+  >
+    <%= label(f, :name) %>
+    <%= text_input(f, :name) %>
+    <%= error_tag(f, :name) %>
+
+    <%= label(f, :color) %>
+    <%= text_input(f, :color) %>
+    <%= error_tag(f, :color) %>
+
+    <%= label(f, :breed) %>
+    <%= text_input(f, :breed) %>
+    <%= error_tag(f, :breed) %>
+
     <.live_component
       module={AmazonS3Web.PuppyLive.UploadComponent}
-      id={"upload-component"}
-      form ={f}
-      
+      id="upload-component"
+      form={f}
       uploads={@uploads}
-      
     />
-  
-  
+
     <div>
-      <%= submit "Save", phx_disable_with: "Saving..." %>
+      <%= submit("Save", phx_disable_with: "Saving...") %>
     </div>
   </.form>
 </div>

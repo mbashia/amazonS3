@@ -4,8 +4,18 @@ defmodule AmazonS3Web.PuppyLiveTest do
   import Phoenix.LiveViewTest
   import AmazonS3.PuppiesFixtures
 
-  @create_attrs %{breed: "some breed", color: "some color", name: "some name", photo: "some photo"}
-  @update_attrs %{breed: "some updated breed", color: "some updated color", name: "some updated name", photo: "some updated photo"}
+  @create_attrs %{
+    breed: "some breed",
+    color: "some color",
+    name: "some name",
+    photo: "some photo"
+  }
+  @update_attrs %{
+    breed: "some updated breed",
+    color: "some updated color",
+    name: "some updated name",
+    photo: "some updated photo"
+  }
   @invalid_attrs %{breed: nil, color: nil, name: nil, photo: nil}
 
   defp create_puppy(_) do

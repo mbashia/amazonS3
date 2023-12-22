@@ -21,7 +21,12 @@ defmodule AmazonS3.PuppiesTest do
     end
 
     test "create_puppy/1 with valid data creates a puppy" do
-      valid_attrs = %{breed: "some breed", color: "some color", name: "some name", photo: "some photo"}
+      valid_attrs = %{
+        breed: "some breed",
+        color: "some color",
+        name: "some name",
+        photo: "some photo"
+      }
 
       assert {:ok, %Puppy{} = puppy} = Puppies.create_puppy(valid_attrs)
       assert puppy.breed == "some breed"
@@ -36,7 +41,13 @@ defmodule AmazonS3.PuppiesTest do
 
     test "update_puppy/2 with valid data updates the puppy" do
       puppy = puppy_fixture()
-      update_attrs = %{breed: "some updated breed", color: "some updated color", name: "some updated name", photo: "some updated photo"}
+
+      update_attrs = %{
+        breed: "some updated breed",
+        color: "some updated color",
+        name: "some updated name",
+        photo: "some updated photo"
+      }
 
       assert {:ok, %Puppy{} = puppy} = Puppies.update_puppy(puppy, update_attrs)
       assert puppy.breed == "some updated breed"

@@ -18,14 +18,12 @@ defmodule AmazonS3Web.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-        live "/puppies", PuppyLive.Index, :index
+    live "/puppies", PuppyLive.Index, :index
     live "/puppies/new", PuppyLive.Index, :new
     live "/puppies/:id/edit", PuppyLive.Index, :edit
 
     live "/puppies/:id", PuppyLive.Show, :show
     live "/puppies/:id/show/edit", PuppyLive.Show, :edit
-
-
   end
 
   # Other scopes may use custom stacks.

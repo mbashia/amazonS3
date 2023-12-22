@@ -14,7 +14,6 @@
 <% end %>
 
 <ul>
-
   <li>
     <strong>Name:</strong>
     <%= @puppy.name %>
@@ -34,8 +33,9 @@
     <strong>Photo:</strong>
     <%= @puppy.photo %>
   </li>
-
 </ul>
 
-<span><%= live_patch "Edit", to: Routes.puppy_show_path(@socket, :edit, @puppy), class: "button" %></span> |
-<span><%= live_redirect "Back", to: Routes.puppy_index_path(@socket, :index) %></span>
+<span>
+  <%= live_patch("Edit", to: Routes.puppy_show_path(@socket, :edit, @puppy), class: "button") %>
+</span> |
+<span><%= live_redirect("Back", to: Routes.puppy_index_path(@socket, :index)) %></span>
