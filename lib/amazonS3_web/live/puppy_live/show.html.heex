@@ -1,0 +1,41 @@
+<h1>Show Puppy</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.puppy_show_path(@socket, :show, @puppy)}>
+    <.live_component
+      module={AmazonS3Web.PuppyLive.FormComponent}
+      id={@puppy.id}
+      title={@page_title}
+      action={@live_action}
+      puppy={@puppy}
+      return_to={Routes.puppy_show_path(@socket, :show, @puppy)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @puppy.name %>
+  </li>
+
+  <li>
+    <strong>Color:</strong>
+    <%= @puppy.color %>
+  </li>
+
+  <li>
+    <strong>Breed:</strong>
+    <%= @puppy.breed %>
+  </li>
+
+  <li>
+    <strong>Photo:</strong>
+    <%= @puppy.photo %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.puppy_show_path(@socket, :edit, @puppy), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.puppy_index_path(@socket, :index) %></span>
